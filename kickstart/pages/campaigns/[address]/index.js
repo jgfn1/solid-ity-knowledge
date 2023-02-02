@@ -57,17 +57,22 @@ const CampaignShow = ({
   return (
     <Layout>
       <Grid>
-        <Grid.Column width={10}>
-          {renderCards()}
-          <Link href={`/campaigns/${address}/requests`}>
-            <a>
-              <Button primary>View Requests</Button>
-            </a>
-          </Link>
-        </Grid.Column>
-        <Grid.Column width={6}>
-          {<ContributeForm address={address}></ContributeForm>}
-        </Grid.Column>
+        <Grid.Row>
+          <Grid.Column width={10}>{renderCards()}</Grid.Column>
+          <Grid.Column width={6}>
+            {<ContributeForm address={address}></ContributeForm>}
+          </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row>
+          <Grid.Column>
+            <Link href={`/campaigns/${address}/requests`}>
+              <a>
+                <Button primary>View Requests</Button>
+              </a>
+            </Link>
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
     </Layout>
   );
